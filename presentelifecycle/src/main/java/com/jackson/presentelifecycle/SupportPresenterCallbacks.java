@@ -22,17 +22,17 @@ class SupportPresenterCallbacks<T extends ILifeCyclePresenter> implements Loader
 
     @Override
     public android.support.v4.content.Loader<T> onCreateLoader(int id, Bundle args) {
-        logger.e("onCreateLoader");
+        logger.i("onCreateLoader");
         return new SupportPresenterLoader<>(context, presenterCreator);
     }
 
     @Override
     public void onLoadFinished(android.support.v4.content.Loader<T> loader, T data) {
-        logger.e("onLoadFinished");
+        logger.i("onLoadFinished");
     }
 
     @Override
     public void onLoaderReset(android.support.v4.content.Loader<T> loader) {
-        logger.e("onLoaderReset");
+        logger.i("onLoaderReset");
     }
 }

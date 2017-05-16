@@ -23,7 +23,7 @@ public class SupportPresenterLoader<T extends ILifeCyclePresenter> extends Loade
 
     @Override
     protected void onStartLoading() {
-        logger.e("onStartLoading");
+        logger.i("onStartLoading");
         // 如果已经有Presenter实例那就直接返回
         if (presenter != null) {
             deliverResult(presenter);
@@ -35,7 +35,7 @@ public class SupportPresenterLoader<T extends ILifeCyclePresenter> extends Loade
 
     @Override
     protected void onForceLoad() {
-        logger.e("onForceLoad");
+        logger.i("onForceLoad");
         // 实例化 Presenter
         presenter = factory.create();
         // 返回 Presenter
@@ -44,7 +44,7 @@ public class SupportPresenterLoader<T extends ILifeCyclePresenter> extends Loade
 
     @Override
     protected void onReset() {
-        logger.e("onReset");
+        logger.i("onReset");
         presenter.onDestroyed();
         presenter = null;
     }

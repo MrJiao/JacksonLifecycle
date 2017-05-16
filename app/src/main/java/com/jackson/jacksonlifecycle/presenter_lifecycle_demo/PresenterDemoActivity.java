@@ -1,6 +1,8 @@
 package com.jackson.jacksonlifecycle.presenter_lifecycle_demo;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
@@ -16,6 +18,12 @@ import com.jackson.presentelifecycle.Presenter;
 public class PresenterDemoActivity extends Activity implements IPresenterCreator<PresenterDemoContracts.Presenter> ,PresenterDemoContracts.View{
 
     private PresenterDemoContracts.Presenter p;
+
+
+    public static void start(Context context){
+        context.startActivity(new Intent(context,PresenterDemoActivity.class));
+    }
+
 
     @Override
     public PresenterDemoContracts.Presenter create() {

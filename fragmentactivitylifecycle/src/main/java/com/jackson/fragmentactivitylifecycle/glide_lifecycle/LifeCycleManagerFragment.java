@@ -50,7 +50,7 @@ public class LifeCycleManagerFragment extends android.app.Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        logger.e("onAttach");
+        logger.i("onAttach");
         rootRequestManagerFragment = LifeCycleRetriever.get()
                 .getLifeCycleManagerFragment(getActivity().getFragmentManager());
         if (rootRequestManagerFragment != this) {
@@ -60,7 +60,7 @@ public class LifeCycleManagerFragment extends android.app.Fragment {
 
     @Override
     public void onDetach() {
-        logger.e("onDetach");
+        logger.i("onDetach");
         super.onDetach();
         if (rootRequestManagerFragment != null) {
             rootRequestManagerFragment.removeChildRequestManagerFragment(this);
@@ -71,7 +71,7 @@ public class LifeCycleManagerFragment extends android.app.Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        logger.e("onCreate");
+        logger.i("onCreate");
         lifecycle.onCreate();
     }
 
@@ -79,7 +79,7 @@ public class LifeCycleManagerFragment extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = super.onCreateView(inflater, container, savedInstanceState);
-        logger.e("onCreateView");
+        logger.i("onCreateView");
         lifecycle.onCreateView();
         return view;
     }
@@ -87,28 +87,28 @@ public class LifeCycleManagerFragment extends android.app.Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        logger.e("onActivityCreated");
+        logger.i("onActivityCreated");
         lifecycle.onActivityCreated();
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        logger.e("onStart");
+        logger.i("onStart");
         lifecycle.onStart();
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        logger.e("onStop");
+        logger.i("onStop");
         lifecycle.onStop();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        logger.e("onDestroy");
+        logger.i("onDestroy");
         lifecycle.onDestroy();
     }
 
