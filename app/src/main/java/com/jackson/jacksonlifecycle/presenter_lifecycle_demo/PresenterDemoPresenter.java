@@ -16,6 +16,13 @@ public class PresenterDemoPresenter extends LifeCyclePresenter<PresenterDemoCont
 
     @Override
     public void loadDate() {
+        //Do Something
         view.showDate("PresenterDemoPresenter");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+
     }
 }

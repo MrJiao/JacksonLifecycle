@@ -10,7 +10,7 @@ import android.support.v4.app.FragmentActivity;
  * Created by Jackson on 2017/5/11.
  * Version : 1
  * Details : 本包代码大部分是取于Glide库 https://github.com/bumptech/glide，
- * 我做代码的抽取和重新封装，用于监听Activity,Fragment,FragmentActivity,
+ * 我做代码了的抽取和重新封装，用于监听Activity,Fragment,FragmentActivity,
  * support.v4.Fragment的生命周期。
  */
 public class Lifecycle {
