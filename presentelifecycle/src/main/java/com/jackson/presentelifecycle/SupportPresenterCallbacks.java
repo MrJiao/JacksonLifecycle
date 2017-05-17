@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 
-import com.jackson.fragmentactivitylifecycle.log.Logger;
+import com.jackson.activityfragmentlifecycle.log.Logger;
 
 /**
  * Created by jackson on 2017/5/4.

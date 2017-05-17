@@ -11,7 +11,7 @@ public class PresenterDemoPresenter extends LifeCyclePresenter<PresenterDemoCont
     @Override
     public void onInitFinished() {
         super.onInitFinished();
-        loadDate();
+        loadDate();//模拟初始化请求网络数据
     }
 
     @Override

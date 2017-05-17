@@ -1,7 +1,6 @@
 package com.jackson.presentelifecycle;
 
-
-import com.jackson.fragmentactivitylifecycle.glide_lifecycle.FragmentLifecycleCallbacks;
+import com.jackson.activityfragmentlifecycle.glide_lifecycle.FragmentLifecycleCallbacks;
 
 /**
  * Created by jackson on 2017/5/14.
@@ -14,6 +13,7 @@ public class FragmentPresenterLifecycle implements FragmentLifecycleCallbacks {
     private final IPresenterCreator creator;
     private PresenterLoader loader;
     private SupportPresenterLoader supportLoader;
+    private boolean isFirst = true;
 
     public FragmentPresenterLifecycle(android.app.Fragment fragment, IPresenterCreator creator) {
         this.fragment = fragment;
@@ -55,8 +55,11 @@ public class FragmentPresenterLifecycle implements FragmentLifecycleCallbacks {
         }else if(supportFragment !=null){
             presenter.onAttachView(supportFragment);
         }
-        presenter.onInitFinished();
-        creator.initPresenterFinished(presenter);
+        if(isFirst){
+            presenter.onInitFinished();
+            creator.initPresenterFinished(presenter);
+            isFirst = false;
+        }
     }
 
     @Override

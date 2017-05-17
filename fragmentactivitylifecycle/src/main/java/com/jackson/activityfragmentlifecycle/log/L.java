@@ -1,4 +1,4 @@
-package com.jackson.fragmentactivitylifecycle.log;
+package com.jackson.activityfragmentlifecycle.log;
 
 import android.util.Log;
 

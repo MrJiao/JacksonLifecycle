@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Loader;
 import android.os.Bundle;
 
-import com.jackson.fragmentactivitylifecycle.log.Logger;
+import com.jackson.activityfragmentlifecycle.log.Logger;
 
 
 /**

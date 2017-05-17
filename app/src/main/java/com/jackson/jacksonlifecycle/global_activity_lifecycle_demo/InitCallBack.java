@@ -3,7 +3,7 @@ package com.jackson.jacksonlifecycle.global_activity_lifecycle_demo;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.jackson.fragmentactivitylifecycle.global_lifecycle.BaseLifeCycleCallbacks;
+import com.jackson.activityfragmentlifecycle.global_lifecycle.BaseLifeCycleCallbacks;
 
 /**
  * Created by Jackson on 2017/5/10.
@@ -25,16 +25,10 @@ public class InitCallBack extends BaseLifeCycleCallbacks<InitCallBack.InitActivi
         t.initListener();
     }
 
-    @Override
-    protected void onActivityStarted(InitActivity t) {
-        t.initDate();
-    }
-
     public interface InitActivity {
         int getViewRes();
         void initView();
         void initListener();
-        void initDate();
     }
 }
 

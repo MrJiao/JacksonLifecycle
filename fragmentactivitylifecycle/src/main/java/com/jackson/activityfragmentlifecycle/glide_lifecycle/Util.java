@@ -1,4 +1,4 @@
-package com.jackson.fragmentactivitylifecycle.glide_lifecycle;
+package com.jackson.activityfragmentlifecycle.glide_lifecycle;
 
 import android.os.Looper;
 

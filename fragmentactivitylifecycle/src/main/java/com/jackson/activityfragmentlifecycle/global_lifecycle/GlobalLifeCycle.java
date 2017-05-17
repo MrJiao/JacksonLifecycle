@@ -1,9 +1,9 @@
-package com.jackson.fragmentactivitylifecycle.global_lifecycle;
+package com.jackson.activityfragmentlifecycle.global_lifecycle;
 
 import android.app.Application;
 import android.util.Log;
 
-import com.jackson.fragmentactivitylifecycle.log.L;
+import com.jackson.activityfragmentlifecycle.log.L;
 
 import java.util.ArrayList;
 
@@ -12,32 +12,32 @@ import java.util.ArrayList;
  * Version : 1
  * Details :
  */
-public class LifeCycleControl {
+public class GlobalLifeCycle {
 
-    private static final String TAG = "LifeCycleControl";
+    private static final String TAG = "GlobalLifeCycle";
     ArrayList<BaseLifeCycleCallbacks> mBaseLifeCycleCallbacksList;
 
-    private LifeCycleControl() {
+    private GlobalLifeCycle() {
     }
 
-    private static LifeCycleControl instance;
+    private static GlobalLifeCycle instance;
 
-    private static LifeCycleControl get() {
+    private static GlobalLifeCycle get() {
         if (instance == null) {
-            synchronized (LifeCycleControl.class) {
+            synchronized (GlobalLifeCycle.class) {
                 if (instance == null) {
-                    instance = new LifeCycleControl();
+                    instance = new GlobalLifeCycle();
                 }
             }
         }
         return instance;
     }
 
-    public static LifeCycleControl init(Application application) {
-        final LifeCycleControl control = get();
+    public static GlobalLifeCycle init(Application application) {
+        final GlobalLifeCycle control = get();
         if(control.mBaseLifeCycleCallbacksList==null){
             control.mBaseLifeCycleCallbacksList = new ArrayList<>();
-            application.registerActivityLifecycleCallbacks(new LifeCycle(control));
+            application.registerActivityLifecycleCallbacks(new GlobalActivityLifecycleCallbacks(control));
         }
         return control;
     }
@@ -73,8 +73,9 @@ public class LifeCycleControl {
         L.e(TAG,"registerCallbacks","size",mBaseLifeCycleCallbacksList.size());
     }
 
-    public void registerCallbacks(BaseLifeCycleCallbacks callbacks) {
+    public GlobalLifeCycle registerCallbacks(BaseLifeCycleCallbacks callbacks) {
         registerCallbacks(callbacks, 0);
+        return this;
     }
 
 

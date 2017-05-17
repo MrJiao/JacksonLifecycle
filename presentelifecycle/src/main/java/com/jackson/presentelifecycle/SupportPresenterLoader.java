@@ -3,7 +3,7 @@ package com.jackson.presentelifecycle;
 import android.content.Context;
 import android.support.v4.content.Loader;
 
-import com.jackson.fragmentactivitylifecycle.log.Logger;
+import com.jackson.activityfragmentlifecycle.log.Logger;
 
 /**
  * Created by Jackson on 2017/5/4.

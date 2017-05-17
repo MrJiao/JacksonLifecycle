@@ -1,4 +1,4 @@
-package com.jackson.fragmentactivitylifecycle.global_lifecycle;
+package com.jackson.activityfragmentlifecycle.global_lifecycle;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import android.os.Bundle;
 public abstract class BaseLifeCycleCallbacks<T>  {
 
 
+    /**
+     * @param activity 当前运行的activity
+     * @return true 执行这个callback的生命周期 false不执行
+     */
     protected abstract boolean isDoCallbacks(Activity activity);
 
 

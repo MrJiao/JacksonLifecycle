@@ -1,4 +1,4 @@
-package com.jackson.fragmentactivitylifecycle.log;
+package com.jackson.activityfragmentlifecycle.log;
 
 /**
  * Created by Jackson on 2016/11/23.

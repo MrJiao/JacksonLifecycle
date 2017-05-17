@@ -2,8 +2,8 @@ package com.jackson.presentelifecycle;
 
 import android.app.Activity;
 
-import com.jackson.fragmentactivitylifecycle.glide_lifecycle.ActivityLifecycleCallbacks;
-import com.jackson.fragmentactivitylifecycle.log.Logger;
+import com.jackson.activityfragmentlifecycle.glide_lifecycle.ActivityLifecycleCallbacks;
+import com.jackson.activityfragmentlifecycle.log.Logger;
 
 
 /**

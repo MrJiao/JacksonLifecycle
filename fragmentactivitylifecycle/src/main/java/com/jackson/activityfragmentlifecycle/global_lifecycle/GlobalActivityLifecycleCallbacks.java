@@ -1,21 +1,21 @@
-package com.jackson.fragmentactivitylifecycle.global_lifecycle;
+package com.jackson.activityfragmentlifecycle.global_lifecycle;
 
 import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
-import com.jackson.fragmentactivitylifecycle.log.L;
+import com.jackson.activityfragmentlifecycle.log.L;
 
 /**
  * Created by jackson on 2017/5/16.
  */
 
-public class LifeCycle implements Application.ActivityLifecycleCallbacks {
-    private static final String TAG = "LifeCycle";
+public class GlobalActivityLifecycleCallbacks implements Application.ActivityLifecycleCallbacks {
+    private static final String TAG = "GlobalActivityLifecycleCallbacks";
 
-    private final LifeCycleControl control;
+    private final GlobalLifeCycle control;
 
-    public LifeCycle(LifeCycleControl control){
+    public GlobalActivityLifecycleCallbacks(GlobalLifeCycle control){
         this.control = control;
     }
 

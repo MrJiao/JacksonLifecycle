@@ -3,7 +3,7 @@ package com.jackson.presentelifecycle;
 import android.app.Activity;
 import android.support.v4.app.FragmentActivity;
 
-import com.jackson.fragmentactivitylifecycle.glide_lifecycle.Lifecycle;
+import com.jackson.activityfragmentlifecycle.glide_lifecycle.Lifecycle;
 
 
 /**
