@@ -70,7 +70,7 @@ public class GlobalLifeCycle {
             return;
         }
         mBaseLifeCycleCallbacksList.add(position, callbacks);
-        L.e(TAG,"registerCallbacks","size",mBaseLifeCycleCallbacksList.size());
+        L.i(TAG,"registerCallbacks","size",mBaseLifeCycleCallbacksList.size());
     }
 
     public GlobalLifeCycle registerCallbacks(BaseLifeCycleCallbacks callbacks) {

@@ -11,7 +11,7 @@ import android.util.Log;
 public class L {
     private static final boolean debug = true;
     private static final ThreadLocal<StringBuilder> tl = new ThreadLocal<>();
-    private static final String myTag = " debug_1.04";
+    private static final String myTag = " lifecycle";
 
     private static StringBuilder getStringBuilder() {
         StringBuilder sb = tl.get();

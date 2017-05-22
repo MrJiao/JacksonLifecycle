@@ -22,7 +22,7 @@ public class GlobalActivityLifecycleCallbacks implements Application.ActivityLif
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        L.e(TAG,"onActivityCreated");
+        L.i(TAG,"onActivityCreated");
         for (BaseLifeCycleCallbacks c : control.mBaseLifeCycleCallbacksList) {
             if (c.isDoCallbacks(activity)) {
                 c.onActivityCreated(activity, savedInstanceState);
@@ -32,7 +32,7 @@ public class GlobalActivityLifecycleCallbacks implements Application.ActivityLif
 
     @Override
     public void onActivityStarted(Activity activity) {
-        L.e(TAG,"onActivityStarted");
+        L.i(TAG,"onActivityStarted");
         for (BaseLifeCycleCallbacks c : control.mBaseLifeCycleCallbacksList) {
             if (c.isDoCallbacks(activity)) {
                 c.onActivityStarted(activity);
@@ -42,7 +42,7 @@ public class GlobalActivityLifecycleCallbacks implements Application.ActivityLif
 
     @Override
     public void onActivityResumed(Activity activity) {
-        L.e(TAG,"onActivityResumed");
+        L.i(TAG,"onActivityResumed");
         for (BaseLifeCycleCallbacks c : control.mBaseLifeCycleCallbacksList) {
             if (c.isDoCallbacks(activity)) {
                 c.onActivityResumed(activity);
@@ -52,7 +52,7 @@ public class GlobalActivityLifecycleCallbacks implements Application.ActivityLif
 
     @Override
     public void onActivityPaused(Activity activity) {
-        L.e(TAG,"onActivityPaused");
+        L.i(TAG,"onActivityPaused");
         for (BaseLifeCycleCallbacks c : control.mBaseLifeCycleCallbacksList) {
             if (c.isDoCallbacks(activity)) {
                 c.onActivityPaused(activity);
@@ -62,7 +62,7 @@ public class GlobalActivityLifecycleCallbacks implements Application.ActivityLif
 
     @Override
     public void onActivityStopped(Activity activity) {
-        L.e(TAG,"onActivityStopped");
+        L.i(TAG,"onActivityStopped");
         for (BaseLifeCycleCallbacks c : control.mBaseLifeCycleCallbacksList) {
             if (c.isDoCallbacks(activity)) {
                 c.onActivityStopped(activity);
@@ -72,7 +72,7 @@ public class GlobalActivityLifecycleCallbacks implements Application.ActivityLif
 
     @Override
     public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-        L.e(TAG,"onActivitySaveInstanceState");
+        L.i(TAG,"onActivitySaveInstanceState");
         for (BaseLifeCycleCallbacks c : control.mBaseLifeCycleCallbacksList) {
             if (c.isDoCallbacks(activity)) {
                 c.onActivitySaveInstanceState(activity, outState);
@@ -82,7 +82,7 @@ public class GlobalActivityLifecycleCallbacks implements Application.ActivityLif
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        L.e(TAG,"onActivityDestroyed");
+        L.i(TAG,"onActivityDestroyed");
         for (BaseLifeCycleCallbacks c : control.mBaseLifeCycleCallbacksList) {
             if (c.isDoCallbacks(activity)) {
                 c.onActivityDestroyed(activity);

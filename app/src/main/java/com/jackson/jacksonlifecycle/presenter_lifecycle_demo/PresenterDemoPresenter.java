@@ -23,6 +23,6 @@ public class PresenterDemoPresenter extends LifeCyclePresenter<PresenterDemoCont
     @Override
     public void onStop() {
         super.onStop();
-
+        //这里可以做一些停止请求等操作
     }
 }

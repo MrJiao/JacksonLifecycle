@@ -1,1 +1,1 @@
-include ':app', ':presentelifecycle', ':fragmentactivitylifecycle'
+include ':app', ':presentelifecycle', ':activityfragmentlifecycle'

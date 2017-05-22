@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".glide_lifecycle_demo.GlideLifecycleDemoActivity"/>
+        <activity android:name=".global_activity_lifecycle_demo.GlobalLifeDemoActivity"/>
+        <activity android:name=".presenter_lifecycle_demo.PresenterDemoActivity"/>
     </application>
 
 </manifest>

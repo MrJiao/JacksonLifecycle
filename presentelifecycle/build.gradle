@@ -22,6 +22,6 @@ android {
 }
 
 dependencies {
-    compile project(':fragmentactivitylifecycle')
+    compile project(':activityfragmentlifecycle')
     compile 'com.android.support:appcompat-v7:23.1.1'
 }
