@@ -2,20 +2,11 @@
 
 
 ## 项目结构
+![image](https://raw.githubusercontent.com/MrJiao/JacksonLifecycle/master/github_res/1.bmp)
+![image](https://raw.githubusercontent.com/MrJiao/JacksonLifecycle/master/github_res/2.bmp)
 
 ##### app 主项目:
 使用方法的demo
-
-##### activityfragmentlifecycle Module:
-activity和fragment的生命周期监听
-
-包划分
-- glide_lifecycle 单个activity、fragment的生命周期监听
-- global_lifecycle 所有的activity生命周期监听
-
-
-##### presentelifecycle Module: 
-Presenter的生命周期监听
 
 
 ## 使用
@@ -183,8 +174,11 @@ public class Application{
 http://blog.chengdazhi.com/index.php/131 
 
 http://www.cnblogs.com/mengdd/p/5988104.html
+
 http://blog.csdn.net/kakaxi1o1/article/details/53159509#t6
+
 http://blog.csdn.net/osle123/article/details/52755556
+
 http://blog.csdn.net/yangdahuan/article/details/62225839
 
 为了达到Presenter生命周期>=Activity/Fragment生命周期的目的，使用Loader作为Presenter的生命周期管理对象。具体参考连接
