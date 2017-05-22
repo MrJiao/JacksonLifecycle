@@ -17,7 +17,4 @@ public class MyApplication extends Application {
                 .init(this)
                 .registerCallbacks(new InitCallBack());
     }
-
-
-
 }
