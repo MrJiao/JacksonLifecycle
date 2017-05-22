@@ -15,9 +15,15 @@ import com.jackson.presentelifecycle.Presenter;
  * Created by jackson on 2017/5/16.
  */
 
-public class PresenterDemoActivity extends Activity implements IPresenterCreator<PresenterDemoContracts.Presenter>{
+public class PresenterDemoActivity extends Activity implements IPresenterCreator<PresenterDemoContracts.Presenter> ,PresenterDemoContracts.View{
 
     private PresenterDemoContracts.Presenter p;
+
+
+    public static void start(Context context){
+        context.startActivity(new Intent(context,PresenterDemoActivity.class));
+    }
+
 
     @Override
     public PresenterDemoContracts.Presenter create() {
@@ -26,14 +32,18 @@ public class PresenterDemoActivity extends Activity implements IPresenterCreator
 
     @Override
     public void initPresenterFinished(PresenterDemoContracts.Presenter p) {
-        this.p = p;//初始化完成后回调这个方法传入绑定好View的Presenter
+        this.p = p;//初始化完成才能使用presenter
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presenter_demo);
-        Presenter.bind(this,this);//为了绑定activity生命周期
+        Presenter.bind(this,this);
     }
 
+    @Override
+    public void showDate(String s) {
+        Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
+    }
 }
