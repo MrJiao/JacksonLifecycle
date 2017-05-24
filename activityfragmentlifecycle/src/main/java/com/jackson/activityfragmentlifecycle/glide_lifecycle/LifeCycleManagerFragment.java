@@ -99,6 +99,20 @@ public class LifeCycleManagerFragment extends android.app.Fragment {
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        logger.i("onPause");
+        lifecycle.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        logger.i("onResume");
+        lifecycle.onResume();
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
         logger.i("onStop");

@@ -42,11 +42,26 @@ class ActivityFragmentLifecycle  {
         }
     }
 
+
+
+    void onResume() {
+        for (ActivityLifecycleCallbacks activityLifecycleCallbacks : Util.getSnapshot(this.activityLifecycleCallbacks)) {
+            activityLifecycleCallbacks.onResume();
+        }
+    }
+
     void onStart() {
         for (ActivityLifecycleCallbacks activityLifecycleCallbacks : Util.getSnapshot(this.activityLifecycleCallbacks)) {
             activityLifecycleCallbacks.onStart();
         }
     }
+
+    public void onPause() {
+        for (ActivityLifecycleCallbacks activityLifecycleCallbacks : Util.getSnapshot(this.activityLifecycleCallbacks)) {
+            activityLifecycleCallbacks.onPause();
+        }
+    }
+
 
     void onStop() {
         for (ActivityLifecycleCallbacks activityLifecycleCallbacks : Util.getSnapshot(this.activityLifecycleCallbacks)) {

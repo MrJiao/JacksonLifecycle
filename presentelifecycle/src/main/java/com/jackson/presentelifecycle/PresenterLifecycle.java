@@ -55,6 +55,16 @@ public class PresenterLifecycle implements ActivityLifecycleCallbacks {
         logger.i("onDestroy");
     }
 
+    @Override
+    public void onResume() {
+
+    }
+
+    @Override
+    public void onPause() {
+
+    }
+
     private ILifeCyclePresenter getPresenter() {
         return loader == null ? null : loader.getPresenter();
     }

@@ -72,6 +72,16 @@ public class FragmentPresenterLifecycle implements FragmentLifecycleCallbacks {
         loader = null;
     }
 
+    @Override
+    public void onResume() {
+
+    }
+
+    @Override
+    public void onPause() {
+
+    }
+
     private ILifeCyclePresenter getPresenter() {
         if (loader != null) {
             return loader.getPresenter();

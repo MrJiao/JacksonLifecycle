@@ -23,4 +23,8 @@ public interface ActivityLifecycleCallbacks {
      * Callback for when {@link android.app.Activity#onDestroy()} is called.
      */
     void onDestroy();
+
+    void onResume();
+
+    void onPause();
 }

@@ -51,6 +51,16 @@ public class SomeControl {
         public void onDestroy() {
 
         }
+
+        @Override
+        public void onResume() {
+
+        }
+
+        @Override
+        public void onPause() {
+
+        }
     }
 
 }

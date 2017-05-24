@@ -97,6 +97,18 @@ public class SupportLifeCycleManagerFragment  extends android.support.v4.app.Fra
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+        lifecycle.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        lifecycle.onResume();
+    }
+
+    @Override
     public void onDestroy() {
         super.onDestroy();
         lifecycle.onDestroy();
