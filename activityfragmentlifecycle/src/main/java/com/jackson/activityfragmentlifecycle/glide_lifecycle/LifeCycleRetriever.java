@@ -7,8 +7,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
 import java.util.HashMap;
@@ -57,7 +55,7 @@ class LifeCycleRetriever implements Handler.Callback{
         getLifeCycleManagerFragment(fm).addListener(activityLifecycleCallbacks);
     }
 
-    public void observe(FragmentActivity activity,ActivityLifecycleCallbacks activityLifecycleCallbacks) {
+    public void observe(android.support.v4.app.FragmentActivity activity,ActivityLifecycleCallbacks activityLifecycleCallbacks) {
         Util.assertMainThread();
         assertNotDestroyed(activity);
         android.support.v4.app.FragmentManager fm = activity.getSupportFragmentManager();
@@ -75,7 +73,7 @@ class LifeCycleRetriever implements Handler.Callback{
     }
 
 
-    public void observe(Fragment fragment, FragmentLifecycleCallbacks activityLifecycleCallbacks){
+    public void observe(android.support.v4.app.Fragment fragment, FragmentLifecycleCallbacks activityLifecycleCallbacks){
         Util.assertMainThread();
         if (fragment.getActivity() == null) {
             throw new IllegalArgumentException("You cannot start a load on a fragment before it is attached");
