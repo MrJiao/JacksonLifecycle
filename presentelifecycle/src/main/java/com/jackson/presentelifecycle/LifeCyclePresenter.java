@@ -15,6 +15,11 @@ public class LifeCyclePresenter<V> implements ILifeCyclePresenter<V> {
     }
 
     @Override
+    public void onAttachedView() {
+
+    }
+
+    @Override
     public void onInitFinished() {
 
     }

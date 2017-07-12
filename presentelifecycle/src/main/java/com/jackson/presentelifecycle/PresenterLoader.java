@@ -16,6 +16,7 @@ public class PresenterLoader<T extends ILifeCyclePresenter> extends Loader {
     private T presenter;
     private IPresenterCreator<T> factory;
     private Logger logger = new Logger("PresenterLoader");
+    private boolean isFirst = true;
 
     public PresenterLoader(Context context, IPresenterCreator<T> factory) {
         super(context);
@@ -52,6 +53,15 @@ public class PresenterLoader<T extends ILifeCyclePresenter> extends Loader {
 
     public T getPresenter(){
         return presenter;
+    }
+
+
+    public boolean isFirstCreate(){
+        return isFirst;
+    }
+
+    public void setIsFirstCreate(boolean isFirst){
+        this.isFirst = isFirst;
     }
 
 }

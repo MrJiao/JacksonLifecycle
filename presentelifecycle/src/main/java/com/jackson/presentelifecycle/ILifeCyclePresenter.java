@@ -7,6 +7,7 @@ package com.jackson.presentelifecycle;
  */
 public interface ILifeCyclePresenter<V> {
     void onAttachView(V view);
+    void onAttachedView();
     void onInitFinished();
     void onStop();
     void onDestroyed();

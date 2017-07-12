@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/JacksonLifecycle.iml" filepath="$PROJECT_DIR$/JacksonLifecycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/activityfragmentlifecycle/activityfragmentlifecycle.iml" filepath="$PROJECT_DIR$/activityfragmentlifecycle/activityfragmentlifecycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/activityfragmentlifecycle/fragmentactivitylifecycle.iml" filepath="$PROJECT_DIR$/activityfragmentlifecycle/fragmentactivitylifecycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/presentelifecycle/presentelifecycle.iml" filepath="$PROJECT_DIR$/presentelifecycle/presentelifecycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxlifecycle/rxlifecycle.iml" filepath="$PROJECT_DIR$/rxlifecycle/rxlifecycle.iml" />
     </modules>

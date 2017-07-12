@@ -1,5 +1,7 @@
 package com.jackson.presentelifecycle;
 
+import android.support.annotation.NonNull;
+
 import com.jackson.activityfragmentlifecycle.glide_lifecycle.FragmentLifecycleCallbacks;
 
 /**
@@ -13,14 +15,13 @@ public class FragmentPresenterLifecycle implements FragmentLifecycleCallbacks {
     private final IPresenterCreator creator;
     private PresenterLoader loader;
     private SupportPresenterLoader supportLoader;
-    private boolean isFirst = true;
 
-    public FragmentPresenterLifecycle(android.app.Fragment fragment, IPresenterCreator creator) {
+    public FragmentPresenterLifecycle(@NonNull android.app.Fragment fragment, IPresenterCreator creator) {
         this.fragment = fragment;
         this.creator = creator;
     }
 
-    public FragmentPresenterLifecycle(android.support.v4.app.Fragment supportFragment, IPresenterCreator creator) {
+    public FragmentPresenterLifecycle(@NonNull android.support.v4.app.Fragment supportFragment, IPresenterCreator creator) {
         this.supportFragment = supportFragment;
         this.creator = creator;
     }
@@ -37,28 +38,42 @@ public class FragmentPresenterLifecycle implements FragmentLifecycleCallbacks {
 
     @Override
     public void onActivityCreated() {
-        if(loader!=null)return;
-        if (fragment != null ) {
-            loader = (PresenterLoader) fragment.getLoaderManager().initLoader(0, null, new PresenterCallbacks<>(fragment.getActivity(), creator));
-            return;
-        } else if (supportFragment != null) {
-            supportLoader = (SupportPresenterLoader) supportFragment.getLoaderManager().initLoader(0, null, new SupportPresenterCallbacks<>(supportFragment.getContext(), creator));
-            return;
+        if (fragment != null) {
+            if (loader == null) {
+                loader = (PresenterLoader) fragment.getLoaderManager().getLoader(0);
+                return;
+            }
+            if (loader == null) {
+                loader = (PresenterLoader) fragment.getLoaderManager().initLoader(0, null, new PresenterCallbacks<>(fragment.getActivity(), creator));
+                return;
+            }
+        } else {
+            if (supportLoader == null) {
+                supportLoader = (SupportPresenterLoader) supportFragment.getLoaderManager().getLoader(0);
+                return;
+            }
+            if (supportLoader == null) {
+                supportLoader = (SupportPresenterLoader) supportFragment.getLoaderManager().initLoader(0, null, new SupportPresenterCallbacks<>(supportFragment.getContext(), creator));
+                return;
+            }
         }
     }
 
     @Override
     public void onStart() {
         final ILifeCyclePresenter presenter = getPresenter();
-        if(fragment!=null){
+        if (presenter == null) return;
+        if (fragment != null) {
             presenter.onAttachView(fragment);
-        }else if(supportFragment !=null){
+            presenter.onAttachedView();
+        } else if (supportFragment != null) {
             presenter.onAttachView(supportFragment);
+            presenter.onAttachedView();
         }
-        if(isFirst){
+        if (isFirstCreate()) {
             presenter.onInitFinished();
             creator.initPresenterFinished(presenter);
-            isFirst = false;
+            setIsFirstCreate(false);
         }
     }
 
@@ -83,13 +98,32 @@ public class FragmentPresenterLifecycle implements FragmentLifecycleCallbacks {
     }
 
     private ILifeCyclePresenter getPresenter() {
-        if (loader != null) {
+        if(loader!=null){
             return loader.getPresenter();
-        } else if (supportLoader != null) {
+        }
+        if(supportLoader!=null){
             return supportLoader.getPresenter();
         }
         return null;
     }
 
+    private boolean isFirstCreate() {
+        if (loader != null) {
+            return loader.isFirstCreate();
+        }
+        if (supportLoader != null) {
+            return supportLoader.isFirstCreate();
+        }
+        return false;
+    }
+
+    private void setIsFirstCreate(boolean isFirstCreate) {
+        if (loader != null) {
+            loader.setIsFirstCreate(isFirstCreate);
+        }
+        if (supportLoader != null) {
+            supportLoader.setIsFirstCreate(isFirstCreate);
+        }
+    }
 
 }

@@ -5,6 +5,8 @@ import android.app.Activity;
 import com.jackson.activityfragmentlifecycle.glide_lifecycle.ActivityLifecycleCallbacks;
 import com.jackson.activityfragmentlifecycle.log.Logger;
 
+import static android.R.attr.fragment;
+
 
 /**
  * Created by jackson on 2017/5/14.
@@ -15,7 +17,6 @@ public class PresenterLifecycle implements ActivityLifecycleCallbacks {
     private Activity activity;
     private final IPresenterCreator creator;
     private PresenterLoader loader;
-    private boolean isFirst = true;
 
     public PresenterLifecycle(Activity activity, IPresenterCreator creator) {
         if(activity ==null)
@@ -26,6 +27,9 @@ public class PresenterLifecycle implements ActivityLifecycleCallbacks {
 
     @Override
     public void onCreate() {
+        if(loader == null){
+            loader = (PresenterLoader) activity.getLoaderManager().getLoader(0);
+        }
         if (loader == null) {
             logger.i("onCreate");
             loader = (PresenterLoader) activity.getLoaderManager().initLoader(0, null, new PresenterCallbacks<>(activity, creator));
@@ -36,11 +40,13 @@ public class PresenterLifecycle implements ActivityLifecycleCallbacks {
     public void onStart() {
         logger.i("onStart");
         final ILifeCyclePresenter presenter = getPresenter();
+        if(presenter == null)return;
         presenter.onAttachView(activity);
-        if(isFirst){
+        presenter.onAttachedView();
+        if(loader.isFirstCreate()){
             presenter.onInitFinished();
             creator.initPresenterFinished(presenter);
-            isFirst = false;
+            loader.setIsFirstCreate(false);
         }
     }
 
@@ -53,6 +59,7 @@ public class PresenterLifecycle implements ActivityLifecycleCallbacks {
     @Override
     public void onDestroy() {
         logger.i("onDestroy");
+        loader = null;
     }
 
     @Override
